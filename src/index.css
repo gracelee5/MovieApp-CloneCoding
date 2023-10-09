@@ -1,13 +1,46 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*{
+  background-color: rgb(11, 20, 68);
+}
+.app-container{
+  display: flex; /* Flexbox 레이아웃을 사용합니다. */
+  flex-wrap: wrap; /* 아이템이 넘칠 경우 줄 바꿈을 허용합니다. */
+  justify-content: center; 
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.movie{
+  width: 200px; /* 2줄에 2개의 아이템을 나열하므로 50% 너비로 설정합니다. 여백을 고려하여 계산합니다. */
+  height: 300px; /* 원하는 높이 */
+  margin: 10px; /* 아이템 간격 조절 */
+  overflow: hidden;
+  display: flex; /* 내부 내용을 수직/수평 가운데 정렬하기 위해 flex 사용 */
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.movie:nth-child(-n+8) {
+  width: calc(12.5% - 10px); /* 8개의 아이템이 있으므로 각 아이템의 너비를 조정합니다. */
+}
+.movie:nth-child(n+9):nth-child(-n+20) {
+  width: calc(12.5% - 10px); /* 12개의 아이템이 있으므로 각 아이템의 너비를 조정합니다. */
+}
+
+.movie.img{
+  max-width: 100%;
+  height:100%;
+  object-fit: cover;
+}
+
+.content {
+  padding: 10px; /* 내용 주위의 여백을 설정합니다. */
+  text-align: center; /* 텍스트를 가운데 정렬합니다. */
+  background-color: rgb(76, 77, 126);
+  justify-content: flex-start;
+  width: 130px;
+  height: 50px;
+}
+
+/* 제목과 평점 간의 간격을 설정합니다. */
+.content p {
+  margin: 5px 0;
+  background-color: transparent;
+
 }
