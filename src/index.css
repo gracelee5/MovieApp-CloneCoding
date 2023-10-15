@@ -15,6 +15,7 @@
   display: flex; /* 내부 내용을 수직/수평 가운데 정렬하기 위해 flex 사용 */
   flex-direction: column;
   margin-bottom: 10px;
+  position: relative;
 }
 .movie:nth-child(-n+8) {
   width: calc(12.5% - 10px); /* 8개의 아이템이 있으므로 각 아이템의 너비를 조정합니다. */
@@ -45,11 +46,6 @@
 
 }
 .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
   background-color: rgba(0, 0, 0, 0.7); /* 투명한 배경색 */
   color: white;
   display: flex;
@@ -59,7 +55,11 @@
   padding: 20px;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
-
+  position: absolute; /* 이미지 위에 띄우기 위해 절대 위치 설정 */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 .moviedetail p{
   background-color: transparent;

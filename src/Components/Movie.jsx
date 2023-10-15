@@ -27,15 +27,16 @@ function Movie({ title, posterPath, voteAverage, overview }) {
         src={`https://image.tmdb.org/t/p/w1280/${posterPath}`}
         alt={title}
       />
-      <div className="content">
-        <p>{title} {voteAverage}</p>
-        {isHovered && (
+      {isHovered && (
           <div className="overlay">
             <p>{title}</p>
             <p>{overview}</p> 
           </div>
         )}
+      <div className="content">
+        <p>{title} {voteAverage}</p>
       </div>
+      
     </div>
   );
 }
