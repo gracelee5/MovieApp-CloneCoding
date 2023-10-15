@@ -26,7 +26,6 @@ function Movie({ title, posterPath, voteAverage, overview }) {
       <img
         src={`https://image.tmdb.org/t/p/w1280/${posterPath}`}
         alt={title}
-        style={{ maxWidth: '100%', height: 'auto', flex: '1' }}
       />
       <div className="content">
         <p>{title} {voteAverage}</p>
